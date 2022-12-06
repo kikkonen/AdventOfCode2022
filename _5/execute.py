@@ -1,4 +1,5 @@
 from typing import Dict, List
+
 from read import Instruction
 
 
@@ -19,7 +20,9 @@ class Executor:
             while len(intermetiate_stack) > 0:
                 self._stacks[instruction.to_stack].append(intermetiate_stack.pop())
 
-    def execute_all_instructions(self, instructions: List[Instruction], preserve_order: bool):
+    def execute_all_instructions(
+        self, instructions: List[Instruction], preserve_order: bool
+    ):
         for instruction in instructions:
             self.execute_instruction(instruction, preserve_order)
 

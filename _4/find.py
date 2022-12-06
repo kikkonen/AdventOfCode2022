@@ -1,9 +1,10 @@
 from pathlib import Path
 from typing import List
+
 from definitions import RangePair
 
-class OverlapFinder:
 
+class OverlapFinder:
     def __init__(self) -> None:
         self._all_pairs: List[RangePair] = self._get_all_pairs()
 
@@ -21,11 +22,10 @@ class OverlapFinder:
                 counter += 1
         return counter
 
-    
     def _get_all_pairs(self) -> List[RangePair]:
-        path = Path(__file__).parent / 'input.txt'
+        path = Path(__file__).parent / "input.txt"
         pairs = []
-        with open(path, 'r') as file:
+        with open(path, "r") as file:
             for line in file.read().splitlines():
                 pairs.append(RangePair.from_string(line))
         return pairs

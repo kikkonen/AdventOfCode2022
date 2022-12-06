@@ -9,7 +9,7 @@ class Range:
 
     @classmethod
     def from_str(cls, range_string: str) -> "Range":
-        start, end = range_string.split('-')
+        start, end = range_string.split("-")
         return Range(start=int(start), end=int(end))
 
     def fully_contains(self, other: "Range") -> bool:
@@ -28,11 +28,13 @@ class RangePair:
 
     @classmethod
     def from_string(cls, pair_str: str) -> "RangePair":
-        first_str, second_str = pair_str.split(',')
+        first_str, second_str = pair_str.split(",")
         return cls(first=Range.from_str(first_str), second=Range.from_str(second_str))
-    
+
     def one_is_contained(self) -> bool:
-        return self.first.fully_contains(self.second) or self.second.fully_contains(self.first)
+        return self.first.fully_contains(self.second) or self.second.fully_contains(
+            self.first
+        )
 
     def do_overlap(self) -> bool:
         return len(self.first.get_overlap(self.second)) > 0

@@ -3,13 +3,8 @@ from pathlib import Path
 from typing import List, Union
 
 import numpy as np
-from definitions import (
-    INPUT_MAPPING,
-    PAYOFF_CHOICE,
-    PAYOFF_WIN_LOSE,
-    RESULT_MAPPING,
-    WIN_LOSE_MATRIX,
-)
+from definitions import (INPUT_MAPPING, PAYOFF_CHOICE, PAYOFF_WIN_LOSE,
+                         RESULT_MAPPING, WIN_LOSE_MATRIX)
 
 
 class MatchSimulatorBase:
